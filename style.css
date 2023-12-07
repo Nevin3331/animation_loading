@@ -1,0 +1,90 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#fff;
+}
+
+.scan {
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+}
+
+.scan .fingerprint {
+    position:relative;
+    width:300px;
+    height:300px;
+    background:url(icons/Property\ 1=Variant2.svg);
+    background-size:300px;
+}
+
+@keyframes animate {
+    0%, 100% {
+        height:0%;
+    }
+    
+    50% {
+        height:100%;
+    }
+}
+
+.scan .fingerprint::after {
+    content: '';
+    position: absolute;
+    left: 63px;
+    width: 173px;
+    height: 9px;
+    background: #A7D1B7;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px #A7D1B7) drop-shadow(0 0 60px #A7D1B7);
+    animation: animate_line 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes animate_line {
+    0%, 100% {
+        top:0%;
+    }
+    
+    50% {
+        top:90%;
+    }
+}
+.carousel {
+    height: 300px;
+    position: absolute;
+    top: 0;
+    overflow: visible;
+    z-index: -2;
+}
+.img-area {
+    border: none;
+    background: none;
+}
+.img-area > img {
+    border-radius: 50px;
+    width: 240px;
+    padding: 30px;
+}
+.carousel .carousel-item {
+    width: 0;
+}
+.card {
+    position: absolute;
+    top: -15px;
+    right: 120px;
+	max-width: 100%;
+	margin: auto;
+    border: none;
+}
+.container {
+  padding: 2px 16px;
+}
